@@ -1,0 +1,193 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                         PAILIT - FILE MAPPING GUIDE                          ║
+║                    Copy files from left → to location on right                ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+
+🔁 COPY THESE FILES:
+═══════════════════════════════════════════════════════════════════════════════
+
+DOWNLOADED FILE                    →    DESTINATION IN PROJECT
+────────────────────────────────────────────────────────────────────────────────
+
+pailit-package.json                →    pailit/package.json
+pailit-App.jsx                     →    pailit/src/App.jsx
+pailit-App.css                     →    pailit/src/App.css
+pailit-index.js                    →    pailit/src/index.js
+pailit-index.html                  →    pailit/public/index.html
+pailit-.gitignore                  →    pailit/.gitignore
+
+
+📂 FINAL PROJECT STRUCTURE:
+═══════════════════════════════════════════════════════════════════════════════
+
+pailit/
+│
+├── package.json              ← From pailit-package.json
+├── .gitignore                ← From pailit-.gitignore
+│
+├── public/
+│   └── index.html            ← From pailit-index.html
+│
+└── src/
+    ├── index.js              ← From pailit-index.js
+    ├── App.jsx               ← From pailit-App.jsx
+    └── App.css               ← From pailit-App.css
+
+
+📋 STEP-BY-STEP COPY INSTRUCTIONS:
+═══════════════════════════════════════════════════════════════════════════════
+
+OPTION A: Using Terminal/Command Line (Recommended)
+──────────────────────────────────────────────────
+
+1. Create directories:
+   mkdir -p pailit/public pailit/src
+
+2. Copy root files:
+   cp pailit-package.json pailit/package.json
+   cp pailit-.gitignore pailit/.gitignore
+
+3. Copy public files:
+   cp pailit-index.html pailit/public/index.html
+
+4. Copy src files:
+   cp pailit-index.js pailit/src/index.js
+   cp pailit-App.jsx pailit/src/App.jsx
+   cp pailit-App.css pailit/src/App.css
+
+5. Verify structure:
+   tree pailit/
+   (or: ls -la pailit/ pailit/public/ pailit/src/)
+
+
+OPTION B: Using File Explorer / Finder (Manual)
+──────────────────────────────────────────────────
+
+1. Create folder: pailit/
+2. Inside pailit/, create 2 subfolders: public/ and src/
+3. Copy pailit-package.json → pailit/package.json
+   Right-click → Rename → Remove "pailit-" prefix
+4. Copy pailit-.gitignore → pailit/.gitignore
+   Right-click → Rename → Remove "pailit-"
+5. Copy pailit-index.html → pailit/public/index.html
+   Right-click → Rename → Change to "index.html"
+6. Copy pailit-index.js → pailit/src/index.js
+   Right-click → Rename → Change to "index.js"
+7. Copy pailit-App.jsx → pailit/src/App.jsx
+   Right-click → Rename → Change to "App.jsx"
+8. Copy pailit-App.css → pailit/src/App.css
+   Right-click → Rename → Change to "App.css"
+
+
+⚠️ IMPORTANT NAMING RULES:
+═══════════════════════════════════════════════════════════════════════════════
+
+React is CASE-SENSITIVE on Linux/macOS.
+
+❌ WRONG:
+  - app.jsx (should be App.jsx)
+  - index.HTML (should be index.html)
+  - App.JS (should be App.jsx)
+
+✅ CORRECT:
+  - App.jsx
+  - App.css
+  - index.js
+  - index.html
+
+Double-check file extensions:
+  - .jsx (not .js) for React components
+  - .js (not .jsx) for non-component files
+  - .css (for stylesheets)
+  - .html (for HTML files)
+
+
+🔍 VERIFY STRUCTURE:
+═══════════════════════════════════════════════════════════════════════════════
+
+Run this command to check if structure is correct:
+
+  find pailit -type f -name '*.jsx' -o -name '*.js' -o -name '*.css' -o -name '*.html'
+
+Should output:
+  pailit/package.json
+  pailit/.gitignore
+  pailit/public/index.html
+  pailit/src/index.js
+  pailit/src/App.jsx
+  pailit/src/App.css
+
+
+✅ READY TO DEPLOY:
+═══════════════════════════════════════════════════════════════════════════════
+
+Once files are in place:
+
+1. cd pailit/
+2. npm install
+3. npm start    (to test locally)
+   OR
+   npm run build (to create production build)
+   OR
+   git push origin main (if connected to GitHub + Vercel)
+
+
+💡 QUICK REFERENCE:
+═══════════════════════════════════════════════════════════════════════════════
+
+File Count: 6 code files + 5 docs = 11 files total
+
+Size: ~50 KB total (very lightweight)
+
+Dependencies: React 18, React DOM 18, React Scripts 5
+
+Build Time: 2-3 minutes (npm install)
+
+Deploy Time: 30 seconds to Vercel (after git push)
+
+
+❓ COMMON MISTAKES:
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ Mistake: Forgot to rename files
+   → Solution: File names must match exactly (case-sensitive)
+
+❌ Mistake: Put files in wrong folders
+   → Solution: Check the structure above, src/ and public/ paths matter
+
+❌ Mistake: File extensions wrong (app.js instead of App.jsx)
+   → Solution: Double-check all extensions and case
+
+❌ Mistake: Missing .gitignore
+   → Solution: It starts with dot (.), might be hidden on some OS
+
+❌ Mistake: Deleted package.json by accident
+   → Solution: Copy pailit-package.json again
+
+
+🎯 SUCCESS CHECKLIST:
+═══════════════════════════════════════════════════════════════════════════════
+
+Before running npm install:
+
+[ ] pailit/ folder exists
+[ ] pailit/package.json exists
+[ ] pailit/.gitignore exists
+[ ] pailit/public/ folder exists
+[ ] pailit/public/index.html exists
+[ ] pailit/src/ folder exists
+[ ] pailit/src/index.js exists
+[ ] pailit/src/App.jsx exists
+[ ] pailit/src/App.css exists
+
+If all checked ✓, you're ready!
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Next: Follow PAILIT_DEPLOYMENT_GUIDE.md
+
+Questions? Check SETUP_CHECKLIST.txt or PAILIT_README.md
+
+═══════════════════════════════════════════════════════════════════════════════
